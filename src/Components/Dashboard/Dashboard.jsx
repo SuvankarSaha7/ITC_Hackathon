@@ -175,7 +175,10 @@ const Dashboard = () => {
   const [resumes, setResumes] = useState([]);
 
   const handleJobDescriptionUpload = (newFiles) => {
-    setJobDescriptions([...jobDescriptions, ...newFiles]);
+    if(newFiles.length>0){
+
+      setJobDescriptions([newFiles[0]]);
+    }
   };
 
   const handleResumeUpload = (newFiles) => {
